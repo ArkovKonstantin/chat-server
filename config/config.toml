@@ -1,0 +1,13 @@
+[SQLDataBase]
+  Server = "localhost"
+  Database = "chat"
+  ApplicationName = "chat-server"
+  MaxIdleConns  = 2
+  MaxOpenConns = 2
+  ConnMaxLifetime = "5m"
+  Port = 5433
+
+[ServerOpt]
+  ReadTimeout = "5s"
+  WriteTimeout = "5s"
+  IdleTimeout = "5s"
