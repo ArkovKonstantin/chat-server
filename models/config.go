@@ -23,8 +23,8 @@ type SQLDataBase struct {
 	MaxOpenConns    int      `toml:"MaxOpenConns"`
 	ConnMaxLifetime duration `toml:"ConnMaxLifetime"`
 	Port            int      `toml:"Port"`
-	UserID          string
-	Password        string
+	User            string   `toml:"User"`
+	Password        string   `toml:"Password"`
 }
 
 // Config struct
@@ -53,8 +53,8 @@ func LoadConfig(c *Config) {
 	if err != nil {
 		return
 	}
-	c.SQLDataBase.UserID = getCredential("/etc/scrt/chat-server/sqlUser")
-	c.SQLDataBase.Password = getCredential("/etc/scrt/chat-server/sqlPassword")
+	// c.SQLDataBase.User = getCredential("/etc/scrt/chat-server/sqlUser")
+	// c.SQLDataBase.Password = getCredential("/etc/scrt/chat-server/sqlPassword")
 
 }
 

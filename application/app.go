@@ -15,11 +15,12 @@ type Application struct {
 }
 
 func New(handler handlers.Handler) Application {
-	return Application{servicePort: 9090, r: mux.NewRouter(), h: handler}
+	return Application{servicePort: 9000, r: mux.NewRouter(), h: handler}
 }
 
 func (app *Application) Start() {
 	app.router()
+	fmt.Println("start listening on :9000 ...")
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(`:%d`, app.servicePort), app.r))
 }
 

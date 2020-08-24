@@ -1,11 +1,13 @@
 [SQLDataBase]
-  Server = "localhost"
+  Server = "postgres"
   Database = "chat"
+  User = "postgres"
+  Password = "12345"
   ApplicationName = "chat-server"
   MaxIdleConns  = 2
   MaxOpenConns = 2
   ConnMaxLifetime = "5m"
-  Port = 5433
+  Port = 5432
 
 [ServerOpt]
   ReadTimeout = "5s"

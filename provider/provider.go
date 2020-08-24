@@ -27,8 +27,8 @@ type provider struct {
 // New new provider
 func New(db *models.SQLDataBase) Provider {
 	info := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s  sslmode=disable",
-		db.Server, db.Port, db.UserID, db.Password, db.Database)
-
+		db.Server, db.Port, db.User, db.Password, db.Database)
+	fmt.Println(info)
 	return &provider{
 		cs:        info,
 		idlConns:  db.MaxIdleConns,
